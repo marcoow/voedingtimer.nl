@@ -1,6 +1,6 @@
-# voedingtimer.nl
+# feeding-journal.com
 
-The source code for http://voedingtimer.nl
+The source code for http://feeding-journal.com
 
 ## Running locally
 

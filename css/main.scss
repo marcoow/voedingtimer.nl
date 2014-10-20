@@ -1,0 +1,245 @@
+---
+---
+
+@import 'helpers';
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Karla', sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  img {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+#main-content {
+  border-bottom: 1px solid #fff;
+
+  i#main-image {
+    margin-top: 50px;
+    transition: background-image 0.5s ease-in-out;
+    -webkit-animation: fadeInDown 1s both;
+    animation: fadeInDown 1s both;
+
+    &.default {
+      @include icon("/images/hero-default", "png", 472px, 632px);
+    }
+
+    &.clock {
+      @include icon("/images/hero-clock", "png", 472px, 632px);
+    }
+
+    &.history {
+      @include icon("/images/hero-history", "png", 472px, 632px);
+    }
+
+    &.bottle {
+      @include icon("/images/hero-bottle", "png", 472px, 632px);
+    }
+
+    &.recommended {
+      @include icon("/images/hero-recommended", "png", 472px, 632px);
+    }
+  }
+
+  #download-teaser {
+    display: none;
+  }
+
+  .store-link {
+    display: block;
+    text-align: center;
+    margin: 100px 0 30px 0;
+    background:
+      url("/images/store-link-background-left.png") top left no-repeat,
+      url("/images/store-link-background-right.png") top right no-repeat;
+
+    i#load {
+      margin-top: 20px;
+      @include icon("/images/load", "png", 203px, 60px);
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    margin: 150px 0 30px 0;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 120%;
+  }
+}
+
+#features {
+  padding: 10px 0 0 0;
+
+  div {
+    background: url("/images/feature-border.png") right center no-repeat;
+
+    &:last-child {
+      background: transparent;
+    }
+
+    a {
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      font-size: 18px;
+
+      i {
+        display: block !important;
+        clear: both;
+        margin: 10px auto;
+      }
+
+      i.feature-clock {
+        @include icon("/images/icon-clock", "png", 44px, 44px);
+      }
+
+      i.feature-history {
+        @include icon("/images/icon-history", "png", 44px, 44px);
+      }
+
+      i.feature-bottle {
+        @include icon("/images/icon-bottle", "png", 24px, 44px);
+      }
+
+      i.feature-recommended {
+        @include icon("/images/icon-recommended", "png", 44px, 44px);
+      }
+    }
+  }
+}
+
+#footer {
+  margin-top: 50px;
+
+  .container {
+    border-top: 1px solid #fff;
+
+    p.navbar-text {
+      float: none;
+      text-align: center;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+
+        &.imprint {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #main-content {
+    text-align: center;
+    border-bottom: none;
+
+    #main-image {
+      display: none !important;
+    }
+
+    h1 {
+      margin: 50px 0 50px 0;
+      font-size: 45px;
+    }
+
+    #download-teaser {
+      display: block;
+      margin: 0 0 50px 0;
+
+      i {
+        -webkit-animation: fadeInDown 1s both;
+        animation: fadeInDown 1s both;
+        @include icon("/images/download-teaser", "png", 600px, 650px);
+      }
+    }
+
+    p {
+      text-align: left;
+    }
+
+    .store-link {
+      margin: 50px 0 0 0;
+      display: none;
+    }
+  }
+
+  #features {
+    div {
+      background: none;
+    }
+  }
+
+  #footer {
+    .container {
+      border-top: none;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  #download-teaser {
+    i {
+      width: 300px !important;
+      height: 325px !important;
+      background-size: 300px 325px !important;
+    }
+  }
+}

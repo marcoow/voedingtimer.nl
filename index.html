@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Voedingtimer Door moeders, voor moeders"/>
+  	<meta name="keywords" content="baby, feeding, stillen, stellen" />
+		<meta name="language" content="nl"/>
+		<meta name="content-language" content="nl"/>
+		<meta name="publisher" content="simplabs, Malthe Luda" />
+    <title>Voedingtimer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/stillbuch.ico" />
+    <link rel="apple-touch-icon" href="/images/apple-57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-144.png">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+    <div class="container">
+      <div id="background">
+        <img src="/images/background.png"/>
+      </div>
+      <div id="main-content" class="row">
+        <div class="col-md-5 col-xs-12">
+          <i id="main-image" class="default"></i>
+        </div>
+        <div class="col-md-7 col-xs-12">
+          <h1>Voedingtimer</h1>
+          <a id="download-teaser" href="https://itunes.apple.com/us/app/stillbuch/id918237891?l=de&ls=1&mt=8"><i></i></a>
+          <p>Met Voedingtimer houd je overzicht over het voeden van je baby. Met de timer kun je gemakkelijk bijhouden hoe lang je baby aan welke borst drinkt. Ook flesvoedingen kun je handmatig invoeren. Wanneer is het tijd voor de volgende voeding? Welke borst was er aan de beurt? Drinkt je baby wel (lang) genoeg? Met Voedingtimer heb je het antwoord altijd bij de hand. Als jonge moeder heb je tenslotte genoeg aan je hoofd.</p>
+          <p>Voedingtimer Door moeders, voor moeders</p>
+          <a href="https://itunes.apple.com/us/app/stillbuch/id918237891?l=de&ls=1&mt=8" class="store-link">
+            <i id="load"></i>
+          </a>
+        </div>
+      </div>
+      <div id="features" class="row">
+        <div class="col-md-3 col-xs-6 text-center">
+          <a href="#clock">
+            <i class="feature-clock"></i>
+            Handige <br/>voedingstimer
+          </a>
+        </div>
+        <div class="col-md-3 col-xs-6 text-center">
+          <a href="#history">
+            <i class="feature-history"></i>
+            Persoonlijk <br/>voedingsdagboek
+          </a>
+        </div>
+        <div class="col-md-3 col-xs-6 text-center">
+          <a href="#bottle">
+            <i class="feature-bottle"></i>
+            Voeg <br/>flesvoeding toe
+          </a>
+        </div>
+        <div class="col-md-3 col-xs-6 text-center">
+          <a href="#recommended">
+            <i class="feature-recommended"></i>
+            Door moeders, <br/>voor moeders
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav id="footer" class="navbar" role="navigation">
+      <div class="container">
+        <p class="navbar-text">Stillbuch is een gezamenlijk project van <a target="_blank" href="http://simplabs.com">simplabs</a> en <a href="http://www.maltheluda.com/" target="_blank">Malthe Luda</a>.</p>
+        <p class="navbar-text">
+          <a class="imprint" href="files/presskit.zip">Persinformatie</a> |
+          <a class="imprint" href="http://simplabs.com/imprint">Colofon</a>
+        </p>
+      </div>
+    </nav>
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53237918-7', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+
+      $(document).ready(function() {
+        $('#features a').click(function(event) {
+          var feature = $(this).attr('href').replace(/^#/, '');
+          $('#main-image').attr('class', feature);
+          event.stopPropagation();
+          return false;
+        });
+
+        var preloadedImages = window.devicePixelRatio > 1 ? ['hero-default@2x.png', 'hero-clock@2x.png', 'hero-history@2x.png', 'hero-bottle@2x.png'] : ['hero-default.png', 'hero-clock.png', 'hero-history.png', 'hero-bottle.png'];
+        $(preloadedImages).each(function(image) {
+          (new Image()).src = '/images/' + this;
+        });
+      });
+    </script>
+	</body>
+</html>
